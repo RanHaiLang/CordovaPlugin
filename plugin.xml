@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="com.jufanshare.testPlugin"
+    version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>TestPlugin</name>
+    <js-module name="TestPlugin" src="www/TestPlugin.js">
+        <clobbers target="cordova.plugins.TestPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="TestPlugin">
+                <param name="android-package" value="com.jufanshare.testPlugin.TestPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-feature android:name="android.hardware.camera.autofocus" />
+
+            <uses-feature android:name="android.hardware.camera" />
+
+            <uses-permission android:name="android.permission.CAMERA" />
+
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <uses-permission android:name="android.permission.INTERNET" />
+
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <activity android:name="ai.advance.liveness.sdk.activity.LivenessActivity" android:launchMode="singleTop"
+                      android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            <activity android:name="ai.advance.liveness.sdk.activity.ResultActivity" android:launchMode="singleTop"
+                      android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            <service
+                android:name="ai.advance.liveness.lib.LService"
+                android:permission="android.permission.BIND_JOB_SERVICE" />
+        </config-file>
+
+
+        <source-file src="src/android/TestPlugin.java"
+            target-dir="src/com/jufanshare/testPlugin/TestPlugin" />
+
+
+
+        <source-file
+            src="src/android/LivenessActivity.java"
+            target-dir="src/ai/advance/liveness/sdk/activity" />
+        <source-file
+            src="src/android/ResultActivity.java"
+            target-dir="src/ai/advance/liveness/sdk/activity" />
+        <source-file
+            src="src/android/LivenessFragment.java"
+            target-dir="src/ai/advance/liveness/sdk/fragment" />
+
+
+        <source-file
+            src="src/android/xml/drawable/anim_frame_blink.xml"
+            target-dir="res/drawable" />
+        <source-file
+            src="src/android/xml/drawable/anim_frame_open_mouse.xml"
+            target-dir="res/drawable" />
+        <source-file
+            src="src/android/xml/drawable/anim_frame_turn_head.xml"
+            target-dir="res/drawable" />
+        <source-file
+            src="src/android/xml/drawable/liveness_ic_icon_md_arrow_back.xml"
+            target-dir="res/drawable" />
+        <source-file
+            src="src/android/xml/drawable/liveness_ic_mask.xml"
+            target-dir="res/drawable" />
+        <source-file
+            src="src/android/xml/drawable/liveness_selector_voice.xml"
+            target-dir="res/drawable" />
+        <source-file
+            src="src/android/xml/drawable/liveness_shape_gradient_green.xml"
+            target-dir="res/drawable" />
+        <source-file
+            src="src/android/xml/drawable/liveness_shape_right_timer.xml"
+            target-dir="res/drawable" />
+
+
+        <source-file
+            src="src/android/xml/layout/activity_liveness.xml"
+            target-dir="res/layout" />
+        <source-file
+            src="src/android/xml/layout/activity_result.xml"
+            target-dir="res/layout" />
+        <source-file
+            src="src/android/xml/layout/fragment_liveness.xml"
+            target-dir="res/layout" />
+
+
+        <source-file
+            src="src/android/xml/values/colors.xml"
+            target-dir="res/values" />
+        <source-file
+            src="src/android/xml/values/colors_theme.xml"
+            target-dir="res/values" />
+        <source-file
+            src="src/android/xml/values/dimens.xml"
+            target-dir="res/values" />
+        <source-file
+            src="src/android/xml/values/strings_failed_reason.xml"
+            target-dir="res/values" />
+        <source-file
+            src="src/android/xml/values/styles.xml"
+            target-dir="res/values" />
+
+
+        <source-file
+            src="src/android/xml/values-in-rID/strings.xml"
+            target-dir="res/values-in-rID" />
+        <source-file
+            src="src/android/xml/values-in-rID/strings_failed_reason.xml"
+            target-dir="res/values-in-rID" />
+
+
+        <source-file
+            src="src/android/xml/values-vi-rVN/strings.xml"
+            target-dir="res/values-vi-rVN" />
+        <source-file
+            src="src/android/xml/values-vi-rVN/strings_failed_reason.xml"
+            target-dir="res/values-vi-rVN" />
+
+
+        <source-file
+            src="src/android/xml/values-zh/strings.xml"
+            target-dir="res/values-zh" />
+        <source-file
+            src="src/android/xml/values-zh/strings_failed_reason.xml"
+            target-dir="res/values-zh" />
+
+
+
+
+        <source-file
+            src="src/android/xml/drawable-xhdpi/blink_1.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/blink_2.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/blink_3.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/blink_4.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/icon_liveness_fail.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/icon_liveness_success.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/liveness_close_voice.png"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/liveness_open_voice.png"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/open_mouse_1.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/open_mouse_2.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/open_mouse_3.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/open_mouse_4.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/open_mouse_5.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/turn_head_1.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/turn_head_2.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/turn_head_3.jpg"
+            target-dir="res/drawable-xhdpi" />
+        <source-file
+            src="src/android/xml/drawable-xhdpi/turn_head_4.jpg"
+            target-dir="res/drawable-xhdpi" />
+
+        <source-file
+            src="src/android/xml/raw/action_blink.mp3"
+            target-dir="res/raw" />
+        <source-file
+            src="src/android/xml/raw/action_open_mouth.mp3"
+            target-dir="res/raw" />
+        <source-file
+            src="src/android/xml/raw/action_turn_head.mp3"
+            target-dir="res/raw" />
+        <source-file
+            src="src/android/xml/raw/detection_failed.mp3"
+            target-dir="res/raw" />
+        <source-file
+            src="src/android/xml/raw/detection_success.mp3"
+            target-dir="res/raw" />
+
+
+        <source-file
+            src="src/android/xml/raw-in-rID/action_blink.mp3"
+            target-dir="res/raw-in-rID" />
+        <source-file
+            src="src/android/xml/raw-in-rID/action_open_mouth.mp3"
+            target-dir="res/raw-in-rID" />
+        <source-file
+            src="src/android/xml/raw-in-rID/action_turn_head.mp3"
+            target-dir="res/raw-in-rID" />
+        <source-file
+            src="src/android/xml/raw-in-rID/detection_failed.mp3"
+            target-dir="res/raw-in-rID" />
+        <source-file
+            src="src/android/xml/raw-in-rID/detection_success.mp3"
+            target-dir="res/raw-in-rID" />
+
+        <source-file
+            src="src/android/xml/raw-vi-rVN/action_blink.mp3"
+            target-dir="res/raw-vi-rVN" />
+        <source-file
+            src="src/android/xml/raw-vi-rVN/action_open_mouth.mp3"
+            target-dir="res/raw-vi-rVN" />
+        <source-file
+            src="src/android/xml/raw-vi-rVN/action_turn_head.mp3"
+            target-dir="res/raw-vi-rVN" />
+        <source-file
+            src="src/android/xml/raw-vi-rVN/detection_failed.mp3"
+            target-dir="res/raw-vi-rVN" />
+        <source-file
+            src="src/android/xml/raw-vi-rVN/detection_success.mp3"
+            target-dir="res/raw-vi-rVN" />
+
+        <source-file
+            src="src/android/xml/raw-zh/action_blink.mp3"
+            target-dir="res/raw-zh" />
+        <source-file
+            src="src/android/xml/raw-zh/action_open_mouth.mp3"
+            target-dir="res/raw-zh" />
+        <source-file
+            src="src/android/xml/raw-zh/action_turn_head.mp3"
+            target-dir="res/raw-zh" />
+        <source-file
+            src="src/android/xml/raw-zh/detection_failed.mp3"
+            target-dir="res/raw-zh" />
+        <source-file
+            src="src/android/xml/raw-zh/detection_success.mp3"
+            target-dir="res/raw-zh" />
+
+
+
+        <source-file
+            src="src/android/gradle-wrapper.properties"
+            target-dir="gradle/wrapper" />
+
+
+        <source-file
+            src="src/android/guardian.aar"
+            target-dir="app/libs" />
+        <framework src="src/android/guardian.gradle" custom="true" type="gradleReference"/>
+        <source-file
+            src="src/android/liveness.aar"
+            target-dir="app/libs" />
+        <framework src="src/android/liveness.gradle" custom="true" type="gradleReference"/>
+
+        <framework src="com.android.support:appcompat-v7:28.0.0" />
+        <framework src="com.android.support.constraint:constraint-layout:1.1.3" />
+    </platform>
+</plugin>
